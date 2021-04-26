@@ -18,6 +18,6 @@ script:
   - docker build -t udagram_frontend .
   - docker tag udagram_frontend danotsonof/udagram_frontend:latest
 
-#after_success:
-  #- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  #- docker push danotsonof/udagram_feed
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push danotsonof/udagram_feed
